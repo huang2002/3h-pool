@@ -1,0 +1,36 @@
+{
+  "name": "3h-pool",
+  "version": "0.1.0",
+  "description": "A simple object pool lib.",
+  "module": "./dist/3h-pool.min.js",
+  "main": "./dist/3h-pool.umd.min.js",
+  "types": "./index.d.ts",
+  "author": "3h",
+  "license": "MIT",
+  "scripts": {
+    "prebuild": "tsc",
+    "build": "rollup -c",
+    "postbuild": "terser dist/3h-pool.js --config-file terser.json --module -o dist/3h-pool.min.js && terser dist/3h-pool.umd.js --config-file terser.json -o dist/3h-pool.umd.min.js && node stat",
+    "test": "node ./test/index.js"
+  },
+  "repository": "huang2002/3h-pool",
+  "keywords": [
+    "object",
+    "pool",
+    "3h"
+  ],
+  "files": [
+    "dist",
+    "types",
+    "index.d.ts"
+  ],
+  "devDependencies": {
+    "@babel/core": "^7.10.0",
+    "@babel/preset-env": "^7.10.0",
+    "@rollup/plugin-babel": "^5.2.0",
+    "3h-test": "^0.6.0",
+    "rollup": "^2.26.0",
+    "terser": "^5.2.0",
+    "typescript": "^4.0.0"
+  }
+}
